@@ -22,7 +22,7 @@ namespace Back_End.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<RoutesModel> GetAllRoutes(){
+        public IEnumerable<Route> GetAllRoutes(){
             return _dataFromService.GetAllRoutes();
         }
     }
