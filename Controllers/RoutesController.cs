@@ -16,13 +16,14 @@ namespace Back_End.Controllers
 
         private readonly RoutesService _dataFromService;
 
-        public RoutesController( RoutesService dataFromService)
+        public RoutesController(RoutesService dataFromService)
         {
             _dataFromService = dataFromService;
         }
 
         [HttpGet]
-        public IEnumerable<Route> GetAllRoutes(){
+        public IEnumerable<Route> GetAllRoutes()
+        {
             return _dataFromService.GetAllRoutes();
         }
     }

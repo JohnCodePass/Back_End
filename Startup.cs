@@ -28,6 +28,7 @@ namespace Back_End
         {
             services.AddControllers();
             services.AddScoped<RoutesService>();
+            services.AddScoped<SheetsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +39,7 @@ namespace Back_End
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

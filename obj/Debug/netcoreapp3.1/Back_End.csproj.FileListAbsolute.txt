@@ -18,3 +18,13 @@ C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Bac
 C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\obj\Debug\netcoreapp3.1\Back_End.dll
 C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\obj\Debug\netcoreapp3.1\Back_End.pdb
 C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\obj\Debug\netcoreapp3.1\Back_End.genruntimeconfig.cache
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\sheetsData.json
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\credentials.json
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\package-lock.json
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\Google.Apis.dll
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\Google.Apis.Auth.dll
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\Google.Apis.Sheets.v4.dll
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Sean Chandler\Desktop\Coding Stuff\CodeStack\Level 3\Class Projects\Back_End\obj\Debug\netcoreapp3.1\Back_End.csproj.CopyComplete
