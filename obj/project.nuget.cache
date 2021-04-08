@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1U+5ugXb+WOJRtNgDasHfB3R1/ROUEay6CgBTMYzXPu53s0BuRyWOZNekeGtfWS5+0GeXVueulCfZDFokXWF8w==",
+  "dgSpecHash": "WTn6YZilOHPBdshIABJspKzWJJRNU4F74P4vzUEjrt6r556tVCtTNNkJmw75bUB177kS5fBiucj9JiEcGXBCrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sean Chandler\\Desktop\\Coding Stuff\\CodeStack\\Level 3\\Class Projects\\Back_End\\Back_End.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sean Chandler\\.nuget\\packages\\google.apis\\1.51.0\\google.apis.1.51.0.nupkg.sha512",
+    "C:\\Users\\Sean Chandler\\.nuget\\packages\\google.apis.auth\\1.51.0\\google.apis.auth.1.51.0.nupkg.sha512",
+    "C:\\Users\\Sean Chandler\\.nuget\\packages\\google.apis.core\\1.51.0\\google.apis.core.1.51.0.nupkg.sha512",
+    "C:\\Users\\Sean Chandler\\.nuget\\packages\\google.apis.sheets.v4\\1.51.0.2272\\google.apis.sheets.v4.1.51.0.2272.nupkg.sha512",
+    "C:\\Users\\Sean Chandler\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
