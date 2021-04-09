@@ -16,11 +16,6 @@ namespace Back_End
 {
     public class Program
     {
-        static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
-        static readonly string ApplicationName = "SJRTD Api";
-        static readonly string SpreadSheetID = "145XJf2g5oWvI5l4mXAT9j76wuqXHoPrrfSCEHu6FC0Q";
-        static readonly string sheet = "Sheet1";
-        static SheetsService service;
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
