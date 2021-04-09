@@ -19,3 +19,5 @@ obj/Debug/netcoreapp3.1/Back_End.csproj.FileListAbsolute.txt
 obj/Debug/netcoreapp3.1/Back_End.csprojAssemblyReference.cache
 obj/Debug/netcoreapp3.1/Back_End.dll
 obj/Debug/netcoreapp3.1/Back_End.pdb
+bin/Debug/netcoreapp3.1/Back_End.dll
+bin/Debug/netcoreapp3.1/Back_End.pdb
