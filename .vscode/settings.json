@@ -2,5 +2,7 @@
     "cSpell.ignoreWords": [
         "knoles",
         "yokuts"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/7eaa221f-0f8b-4d02-ad7e-588dce891ae9/resourceGroups/gogh/providers/Microsoft.Web/sites/sjrtd",
+    "appService.deploySubpath": "bin/Release/netcoreapp3.1/publish"
 }
