@@ -32,7 +32,7 @@ namespace Back_End
             services.AddScoped<RoutesService>();
             services.AddScoped<SheetsService>();
 
-            var connectionString = Configuration.GetConnectionString("myConnectionString");
+            var connectionString = Configuration.GetConnectionString("MyConnectionString");
             services.AddDbContext<Data>(options => options.UseSqlServer(connectionString));
         }
 
