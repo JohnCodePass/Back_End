@@ -4,9 +4,9 @@ namespace Back_End.Models
     {
         public int RouteNumber{get;set;}
         public string TypeOfDay{get;set;}
-        public int NumberOfStops{get;set;}
         public string Direction{get;set;}
-        public Stop[] Stops{get;set;}
+        public string Stops{get;set;}
+        public string trip{get;set;}
 
     }
 }
