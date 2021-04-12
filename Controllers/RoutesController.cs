@@ -26,5 +26,11 @@ namespace Back_End.Controllers
         {
             return _dataFromService.GetAllRoutes();
         }
+
+        [HttpPost("add")]
+        public bool PostNewInfo(Route route)
+        {
+            return _dataFromService.PostNewInfo(route);
+        }
     }
 }
