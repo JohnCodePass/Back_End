@@ -31,6 +31,7 @@ namespace Back_End
             services.AddControllers();
             services.AddScoped<RoutesService>();
             services.AddScoped<SheetsService>();
+            services.AddScoped<HashPassword>();
 
             var connectionString = Configuration.GetConnectionString("MyConnectionString");
             services.AddDbContext<Data>(options => options.UseSqlServer(connectionString));
