@@ -8,7 +8,7 @@ namespace Back_End.Services
 {
     public class RoutesService
     {
-        public List<Route> RoutesList = new List<Route>(){
+        public List<Route> RoutesList = new List<Route>(){/* 
             new Route() {TypeOfDay = "Weekday", RouteNumber = 40, NumberOfStops = 7, Direction = "North",  Stops = new Stop[]{
                 new Stop() {Location = "DTC Depart", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
                 new Stop() {Location = "Fremont & Commerce", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
@@ -18,7 +18,7 @@ namespace Back_End.Services
                 new Stop() {Location = "Pacific & Ben Holt", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
                 new Stop() {Location = "HTS", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}}
             }}
-        };
+         */};
 
         public IEnumerable<Route> GetAllRoutes(){
             return RoutesList;
