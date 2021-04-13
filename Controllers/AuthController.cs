@@ -79,15 +79,12 @@ namespace Back_End.Controllers
                 cmd.Parameters.AddWithValue("@password", hasher.Hash(user.password) );
                 cmd.Connection = con;
                 con.Open();
-
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds);
                 con.Close();
-
                 return true;
             }
-
         }
 
         // to authorize a method, add "Authorize"

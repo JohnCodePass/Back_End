@@ -16,19 +16,14 @@ namespace Back_End.Controllers
     [Route("[controller]")]
     public class RoutesController : ControllerBase
     {
-
-        public RoutesController(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
         public IConfiguration Configuration { get; }
 
         private readonly RoutesService _dataFromService;
 
-        public RoutesController(RoutesService dataFromService)
+        public RoutesController(RoutesService dataFromService,IConfiguration configuration)
         {
             _dataFromService = dataFromService;
+            Configuration = configuration;
         }
 
         [HttpGet]
