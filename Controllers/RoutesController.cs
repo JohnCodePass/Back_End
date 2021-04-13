@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 using Back_End.Models;
 using Back_End.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using System.Data;
 
 namespace Back_End.Controllers
 {
@@ -13,6 +16,13 @@ namespace Back_End.Controllers
     [Route("[controller]")]
     public class RoutesController : ControllerBase
     {
+
+        public RoutesController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
 
         private readonly RoutesService _dataFromService;
 
@@ -25,6 +35,28 @@ namespace Back_End.Controllers
         public IEnumerable<Route> GetAllRoutes()
         {
             return _dataFromService.GetAllRoutes();
+        }
+
+        [HttpPost]
+        public bool Add([FromBody] Route route)
+        {
+
+            using (SqlConnection con = new SqlConnection(Configuration.GetConnectionString("myConnectionString")))
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Route VALUES (@number, @type)");
+                cmd.Parameters.AddWithValue("@number", route.number );
+                cmd.Parameters.AddWithValue("@type", route.type );
+                cmd.Connection = con;
+                con.Open();
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                con.Close();
+
+                return true;
+            }
+
         }
     }
 }
