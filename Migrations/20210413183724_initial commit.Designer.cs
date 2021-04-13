@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Back_End.Migrations
 {
     [DbContext(typeof(Data))]
-    [Migration("20210413170700_initial commit")]
+    [Migration("20210413183724_initial commit")]
     partial class initialcommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,7 @@ namespace Back_End.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("PathTable");
+                    b.ToTable("Path");
 
                     b.HasData(
                         new
@@ -59,21 +59,25 @@ namespace Back_End.Migrations
 
             modelBuilder.Entity("Back_End.Models.Route", b =>
                 {
-                    b.Property<int>("number")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("number")
+                        .HasColumnType("int");
+
                     b.Property<string>("type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("number");
+                    b.HasKey("id");
 
-                    b.ToTable("RouteTable");
+                    b.ToTable("Route");
 
                     b.HasData(
                         new
                         {
+                            id = 1,
                             number = 40,
                             type = "BART EXPRESS"
                         });
@@ -94,7 +98,7 @@ namespace Back_End.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("UserInfoTable");
+                    b.ToTable("UserInfo");
 
                     b.HasData(
                         new

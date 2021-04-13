@@ -32,7 +32,7 @@ namespace Back_End.Controllers
             return _dataFromService.GetAllRoutes();
         }
 
-        [HttpPost]
+        [HttpPost, Route("add")]
         public bool Add([FromBody] Route route)
         {
 

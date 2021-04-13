@@ -6,9 +6,9 @@ namespace Back_End.Context
 {
     public class Data : DbContext
     {
-        public DbSet<UserInfo> UserInfoTable { get; set; }
-        public DbSet<Route> RouteTable { get; set; }
-        public DbSet<Path> PathTable { get; set; }
+        public DbSet<UserInfo> UserInfo { get; set; }
+        public DbSet<Route> Route { get; set; }
+        public DbSet<Path> Path { get; set; }
 
 
         public Data(DbContextOptions<Data> options) : base(options)
@@ -31,7 +31,7 @@ namespace Back_End.Context
 
             var routeFixedData = new List<Route>
             {
-                new Route(40, "BART EXPRESS"),
+                new Route(1, 40, "BART EXPRESS"),
             };
 
             var pathFixedData = new List<Path>

@@ -42,7 +42,7 @@ namespace Back_End.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("PathTable");
+                    b.ToTable("Path");
 
                     b.HasData(
                         new
@@ -57,21 +57,25 @@ namespace Back_End.Migrations
 
             modelBuilder.Entity("Back_End.Models.Route", b =>
                 {
-                    b.Property<int>("number")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("number")
+                        .HasColumnType("int");
+
                     b.Property<string>("type")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("number");
+                    b.HasKey("id");
 
-                    b.ToTable("RouteTable");
+                    b.ToTable("Route");
 
                     b.HasData(
                         new
                         {
+                            id = 1,
                             number = 40,
                             type = "BART EXPRESS"
                         });
@@ -92,7 +96,7 @@ namespace Back_End.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("UserInfoTable");
+                    b.ToTable("UserInfo");
 
                     b.HasData(
                         new
