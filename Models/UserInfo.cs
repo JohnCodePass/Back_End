@@ -11,5 +11,7 @@ namespace Back_End.Models
             this.username = username;
             this.password = password;
         }
+
+        public UserInfo() {}
     }
 }
