@@ -30,7 +30,7 @@ namespace Back_End.Context
             };
             var pathFixedData = new List<Path>
             {
-                new Path(1, "local", 40, "weekday", "North", "['stop 1']", "['9:55am']"),
+                new Path(1,  40, "weekday", "local", "North", "['stop 1']", "['9:55am']"),
             };
             builder.Entity<UserInfo>().HasData(userFixedData);
             builder.Entity<Route>().HasData(routeFixedData);

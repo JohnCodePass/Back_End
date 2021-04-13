@@ -12,7 +12,7 @@ namespace Back_End.Models
 
         public Path(){}
 
-        public Path( int id, string typeOfRoute ,int routeNumber, string typeOfDay, string direction, string stopNames, string tripTimes)
+        public Path( int id ,int routeNumber, string typeOfDay, string typeOfRoute, string direction, string stopNames, string tripTimes)
         {
             this.id = id;
             this.routeNumber = routeNumber;
