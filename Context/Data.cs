@@ -8,6 +8,8 @@ namespace Back_End.Context
     {
         public DbSet<UserInfo> UserInfoTable { get; set; }
         public DbSet<Route> RouteTable { get; set; }
+        public DbSet<Path> PathTable { get; set; }
+
 
         public Data(DbContextOptions<Data> options) : base(options)
         {
