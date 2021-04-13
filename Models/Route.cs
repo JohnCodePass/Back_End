@@ -2,11 +2,16 @@ namespace Back_End.Models
 {
     public class Route
     {
-        public int RouteNumber {get;set;}
-        public string TypeOfDay {get;set;}
-        public string Direction {get;set;}
-        public string Stops {get;set;}
-        public int trip {get;set;}
+        public int number {get;set;}
+        public string type {get;set;}
+
+        public Route() {}
+
+        public Route(int number, string type)
+        {
+            this.number = number;
+            this.type = type;
+        }
 
     }
 }

@@ -6,6 +6,8 @@ namespace Back_End.Context
 {
     public class Data : DbContext
     {
+        public DbSet<UserInfo> UserInfoTable { get; set; }
+        public DbSet<Route> RouteTable { get; set; }
 
         public Data(DbContextOptions<Data> options) : base(options)
         {
@@ -20,11 +22,24 @@ namespace Back_End.Context
 
         private void SeedData(ModelBuilder builder)
         {
-            var fixedData = new List<UserInfo>{
+            var userFixedData = new List<UserInfo>
+            {
                 new UserInfo(1, "huegogh", "password"),
             };
 
-            builder.Entity<UserInfo>().HasData(fixedData);
+            var routeFixedData = new List<Route>
+            {
+                new Route(40, "BART EXPRESS"),
+            };
+
+            var pathFixedData = new List<Path>
+            {
+                new Path(1, 40, "weekday", "North", "['stop 1']", "['9:55am']"),
+            };
+
+            builder.Entity<UserInfo>().HasData(userFixedData);
+            builder.Entity<Route>().HasData(routeFixedData);
+            builder.Entity<Path>().HasData(pathFixedData);
         }
 
 
