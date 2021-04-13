@@ -2,12 +2,16 @@ using System.Collections.Generic;
 using Back_End.Models;
 using System.Linq;
 using Google.Apis.Sheets;
-
+using Back_End.Context;
 
 namespace Back_End.Services
 {
     public class RoutesService
     {
+        private readonly Data _dataFromService;
+        public RoutesService(Data dataFromService){
+            _dataFromService = dataFromService;
+        }
         public List<Route> RoutesList = new List<Route>(){/* 
             new Route() {TypeOfDay = "Weekday", RouteNumber = 40, NumberOfStops = 7, Direction = "North",  Stops = new Stop[]{
                 new Stop() {Location = "DTC Depart", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
@@ -22,6 +26,12 @@ namespace Back_End.Services
 
         public IEnumerable<Route> GetAllRoutes(){
             return RoutesList;
+        }
+
+        public bool addRoutes(Route route){
+            _dataFromService.Add(route);
+            _dataFromService.SaveChanges();
+            return true;
         }
     }
 }
