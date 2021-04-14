@@ -51,5 +51,16 @@ namespace Back_End.Services
             return _dataFromService.Paths;
         }
 
+        public IEnumerable<Path> getAllPaths(string type)
+        {
+            return _dataFromService.Paths.Where( p => p.typeOfRoute == type);
+        }
+
+        public bool updatePath(Path path){
+            _dataFromService.Paths.Update(path);
+            _dataFromService.SaveChanges();
+            return true;
+        }
+
     }
 }
