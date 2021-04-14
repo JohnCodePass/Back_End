@@ -51,5 +51,10 @@ namespace Back_End.Services
             return _dataFromService.Paths;
         }
 
+        public IEnumerable<Path> getAllPaths(string type)
+        {
+            return _dataFromService.Paths.Where( p => p.typeOfRoute == type);
+        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace Back_End.Controllers
 
         private readonly RoutesService _dataFromService;
 
-        public RoutesController(RoutesService dataFromService,IConfiguration configuration)
+        public RoutesController(RoutesService dataFromService, IConfiguration configuration)
         {
             _dataFromService = dataFromService;
             Configuration = configuration;
@@ -45,9 +45,16 @@ namespace Back_End.Controllers
         }
 
         [HttpGet, Route("paths")]
-        public IEnumerable<Path> GetAllPaths()
+        public IEnumerable<Path> GetAllPaths([FromQuery] string type)
         {
-            return _dataFromService.getAllPaths();
+            if (type != "")
+            {
+                return _dataFromService.getAllPaths(type);
+            }
+            else
+            {
+                return _dataFromService.getAllPaths();
+            }
         }
 
     }
