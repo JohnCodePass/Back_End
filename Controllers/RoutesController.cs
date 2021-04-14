@@ -57,5 +57,11 @@ namespace Back_End.Controllers
             }
         }
 
+        [HttpPut, Route("update")]
+        public bool UpdateId([FromBody] Path path)
+        {
+            return _dataFromService.updatePath(path);
+        }
+
     }
 }
