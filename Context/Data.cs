@@ -22,7 +22,7 @@ namespace Back_End.Context
         {
             var userFixedData = new List<UserInfo>
             {
-                new UserInfo(1, "huegogh", "password"),
+                new UserInfo(1, "huegogh", "password", "email"),
             };
             var routeFixedData = new List<Route>
             {
