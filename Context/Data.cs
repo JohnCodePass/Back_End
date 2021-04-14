@@ -7,8 +7,11 @@ namespace Back_End.Context
     public class Data : DbContext
     {
         public DbSet<UserInfo> Users { get; set; }
+        public DbSet<UserFavorate> Favorate { get; set; }
         public DbSet<Route> Routes { get; set; }
         public DbSet<Path> Paths { get; set; }
+        public DbSet<Stop> Stop { get; set; }
+        public DbSet<RiderAlert> RiderAlert { get; set; }
         public Data(DbContextOptions<Data> options) : base(options)
         {
 
@@ -31,6 +34,18 @@ namespace Back_End.Context
             var pathFixedData = new List<Path>
             {
                 new Path(1,  42, "BRT-Express", "Weekday", "North", "['stop 1']", "[['9:55am']]"),
+            };
+            var stopFixedData = new List<Stop>
+            {
+                new Stop(1, "DTC Depart", "E Weber Ave, Stockton, CA 95202","0","0"),
+            };
+            var favorateFixedData = new List<UserFavorate>
+            {
+                new UserFavorate(1, "huegogh", "DTC Depart","E Weber Ave, Stockton, CA 95202","Pacific & Ben Holt"),
+            };
+            var riderAlertFixedData = new List<RiderAlert>
+            {
+                new RiderAlert(1, "1/1/2021", "title","content"),
             };
             builder.Entity<UserInfo>().HasData(userFixedData);
             builder.Entity<Route>().HasData(routeFixedData);
