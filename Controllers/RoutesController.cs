@@ -43,5 +43,12 @@ namespace Back_End.Controllers
         {
             return _dataFromService.addPath(path);
         }
+
+        [HttpGet, Route("paths")]
+        public IEnumerable<Path> GetAllPaths()
+        {
+            return _dataFromService.getAllPaths();
+        }
+
     }
 }

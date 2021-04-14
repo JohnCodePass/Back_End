@@ -9,10 +9,12 @@ namespace Back_End.Services
     public class RoutesService
     {
         private readonly Data _dataFromService;
-        public RoutesService(Data dataFromService){
+        public RoutesService(Data dataFromService)
+        {
             _dataFromService = dataFromService;
         }
-        public List<Route> RoutesList = new List<Route>(){/* 
+        public List<Route> RoutesList = new List<Route>()
+        {/* 
             new Route() {TypeOfDay = "Weekday", RouteNumber = 40, NumberOfStops = 7, Direction = "North",  Stops = new Stop[]{
                 new Stop() {Location = "DTC Depart", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
                 new Stop() {Location = "Fremont & Commerce", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
@@ -22,22 +24,32 @@ namespace Back_End.Services
                 new Stop() {Location = "Pacific & Ben Holt", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}},
                 new Stop() {Location = "HTS", NumberOfTimes = 55 , Times = new string[]{"1","2","3"}}
             }}
-         */};
+         */
+        };
 
-        public IEnumerable<Route> GetAllRoutes(){
+        public IEnumerable<Route> GetAllRoutes()
+        {
             return RoutesList;
         }
 
-        public bool addRoute(Route route){
+        public bool addRoute(Route route)
+        {
             _dataFromService.Add(route);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool addPath(Path path){
+        public bool addPath(Path path)
+        {
             _dataFromService.Add(path);
             _dataFromService.SaveChanges();
             return true;
         }
+
+        public IEnumerable<Path> getAllPaths()
+        {
+            return _dataFromService.Paths;
+        }
+
     }
 }
