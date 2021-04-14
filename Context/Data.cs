@@ -6,9 +6,9 @@ namespace Back_End.Context
 {
     public class Data : DbContext
     {
-        public DbSet<UserInfo> UserInfo { get; set; }
-        public DbSet<Route> Route { get; set; }
-        public DbSet<Path> Path { get; set; }
+        public DbSet<UserInfo> Users { get; set; }
+        public DbSet<Route> Routes { get; set; }
+        public DbSet<Path> Paths { get; set; }
         public Data(DbContextOptions<Data> options) : base(options)
         {
 
@@ -30,7 +30,7 @@ namespace Back_End.Context
             };
             var pathFixedData = new List<Path>
             {
-                new Path(1,  40, "weekday", "local", "North", "['stop 1']", "['9:55am']"),
+                new Path(1,  42, "BRT-Express", "Weekday", "North", "['stop 1']", "[['9:55am']]"),
             };
             builder.Entity<UserInfo>().HasData(userFixedData);
             builder.Entity<Route>().HasData(routeFixedData);

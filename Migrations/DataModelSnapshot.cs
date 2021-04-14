@@ -28,30 +28,35 @@ namespace Back_End.Migrations
                     b.Property<string>("direction")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("routeNumber")
+                    b.Property<int>("route")
                         .HasColumnType("int");
 
-                    b.Property<string>("stopNames")
+                    b.Property<string>("stops")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("tripTimes")
+                    b.Property<string>("trips")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("typeOfDay")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("typeOfRoute")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("id");
 
-                    b.ToTable("Path");
+                    b.ToTable("Paths");
 
                     b.HasData(
                         new
                         {
                             id = 1,
                             direction = "North",
-                            routeNumber = 40,
-                            tripTimes = "['9:55am']",
-                            typeOfDay = "weekday"
+                            route = 42,
+                            stops = "['stop 1']",
+                            trips = "[['9:55am']]",
+                            typeOfDay = "Weekday",
+                            typeOfRoute = "BRT-Express"
                         });
                 });
 
@@ -70,7 +75,7 @@ namespace Back_End.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Route");
+                    b.ToTable("Routes");
 
                     b.HasData(
                         new
@@ -96,7 +101,7 @@ namespace Back_End.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("UserInfo");
+                    b.ToTable("Users");
 
                     b.HasData(
                         new

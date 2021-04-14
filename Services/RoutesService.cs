@@ -28,8 +28,14 @@ namespace Back_End.Services
             return RoutesList;
         }
 
-        public bool addRoutes(Route route){
+        public bool addRoute(Route route){
             _dataFromService.Add(route);
+            _dataFromService.SaveChanges();
+            return true;
+        }
+
+        public bool addPath(Path path){
+            _dataFromService.Add(path);
             _dataFromService.SaveChanges();
             return true;
         }

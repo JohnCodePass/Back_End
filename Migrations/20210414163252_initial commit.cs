@@ -7,24 +7,25 @@ namespace Back_End.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Path",
+                name: "Paths",
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    routeNumber = table.Column<int>(nullable: false),
+                    route = table.Column<int>(nullable: false),
+                    typeOfRoute = table.Column<string>(nullable: true),
                     typeOfDay = table.Column<string>(nullable: true),
                     direction = table.Column<string>(nullable: true),
-                    stopNames = table.Column<string>(nullable: true),
-                    tripTimes = table.Column<string>(nullable: true)
+                    stops = table.Column<string>(nullable: true),
+                    trips = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Path", x => x.id);
+                    table.PrimaryKey("PK_Paths", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Route",
+                name: "Routes",
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
@@ -34,11 +35,11 @@ namespace Back_End.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Route", x => x.id);
+                    table.PrimaryKey("PK_Routes", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserInfo",
+                name: "Users",
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
@@ -48,21 +49,21 @@ namespace Back_End.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserInfo", x => x.id);
+                    table.PrimaryKey("PK_Users", x => x.id);
                 });
 
             migrationBuilder.InsertData(
-                table: "Path",
-                columns: new[] { "id", "direction", "routeNumber", "stopNames", "tripTimes", "typeOfDay" },
-                values: new object[] { 1, "North", 40, null, "['9:55am']", "weekday" });
+                table: "Paths",
+                columns: new[] { "id", "direction", "route", "stops", "trips", "typeOfDay", "typeOfRoute" },
+                values: new object[] { 1, "North", 42, "['stop 1']", "[['9:55am']]", "Weekday", "BRT-Express" });
 
             migrationBuilder.InsertData(
-                table: "Route",
+                table: "Routes",
                 columns: new[] { "id", "number", "type" },
                 values: new object[] { 1, 40, "BART EXPRESS" });
 
             migrationBuilder.InsertData(
-                table: "UserInfo",
+                table: "Users",
                 columns: new[] { "id", "password", "username" },
                 values: new object[] { 1, "password", "huegogh" });
         }
@@ -70,13 +71,13 @@ namespace Back_End.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Path");
+                name: "Paths");
 
             migrationBuilder.DropTable(
-                name: "Route");
+                name: "Routes");
 
             migrationBuilder.DropTable(
-                name: "UserInfo");
+                name: "Users");
         }
     }
 }

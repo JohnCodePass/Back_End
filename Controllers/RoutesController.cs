@@ -35,25 +35,13 @@ namespace Back_End.Controllers
         [HttpPost, Route("add")]
         public bool Add(Route route)
         {
-            return _dataFromService.addRoutes(route);
+            return _dataFromService.addRoute(route);
+        }
 
-            
-            // using (SqlConnection con = new SqlConnection(Configuration.GetConnectionString("myConnectionString")))
-            // {
-            //     SqlCommand cmd = new SqlCommand("INSERT INTO Route VALUES (@number, @type)");
-            //     cmd.Parameters.AddWithValue("@number", route.number );
-            //     cmd.Parameters.AddWithValue("@type", route.type );
-            //     cmd.Connection = con;
-            //     con.Open();
-
-            //     DataSet ds = new DataSet();
-            //     SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //     da.Fill(ds);
-            //     con.Close();
-
-            //     return true;
-            // }
-
+        [HttpPost, Route("add-path")]
+        public bool AddPath(Path path)
+        {
+            return _dataFromService.addPath(path);
         }
     }
 }
