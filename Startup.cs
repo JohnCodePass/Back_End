@@ -36,6 +36,7 @@ namespace Back_End
             services.AddScoped<HashPassword>();
             services.AddScoped<FaresService>();
             services.AddScoped<AuthService>();
+            services.AddScoped<FavoriteService>();
 
             var connectionString = Configuration.GetConnectionString("MyConnectionString");
             services.AddDbContext<Data>(options => options.UseSqlServer(connectionString));

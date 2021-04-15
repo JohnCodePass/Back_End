@@ -20,5 +20,25 @@ namespace Back_End.Services
         {
             return _dataFromService.Favorites;
         }
+
+        public bool addFavorite(UserFavorite favorite)
+        {
+            _dataFromService.Add(favorite);
+            _dataFromService.SaveChanges();
+            return true;
+        }
+
+        public bool updateFavorite(UserFavorite favorite){
+            _dataFromService.Favorites.Update(favorite);
+            _dataFromService.SaveChanges();
+            return true;
+        }
+
+        public bool deleteFavorite(UserFavorite favorite)
+        {
+            _dataFromService.Favorites.Remove(favorite);
+            _dataFromService.SaveChanges();
+            return true;
+        }
     }
 }

@@ -12,10 +12,8 @@ using System.Data;
 
 namespace Back_End.Controllers
 {
-    
     [ApiController]
     [Route("[controller]")]
-
     public class FavoriteController : ControllerBase
     {
 
@@ -35,10 +33,23 @@ namespace Back_End.Controllers
             return _dataFromService.GetAllFavorites();
         }
 
-        // [HttpPost, Route("add")]
-        // public bool Add(UserFavorite favorite)
-        // {
-        //     return _dataFromService.addFavorite(favorite);
-        // }
+        [HttpPost, Route("add")]
+        public bool Add(UserFavorite favorite)
+        {
+            return _dataFromService.addFavorite(favorite);
+        }
+
+        [HttpPut, Route("update")]
+        public bool updateUser(UserFavorite favorite)
+        {
+            return _dataFromService.updateFavorite(favorite);
+        }
+
+
+        [HttpDelete, Route("delete")]
+        public bool deleteUser(UserFavorite favorite)
+        {
+            return _dataFromService.deleteFavorite(favorite);
+        }
     }
 }
