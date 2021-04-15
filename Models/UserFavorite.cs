@@ -1,6 +1,6 @@
 namespace Back_End.Models
 {
-    public class UserFavorate
+    public class UserFavorite
     {
         public int id { get; set; }
         public string username { get; set; }
@@ -8,7 +8,7 @@ namespace Back_End.Models
         public string destinationAddress { get; set; }
         public string savedStop { get; set;}
 
-        public UserFavorate(int id, string username, string destinationName, string destinationAddress, string savedStop){
+        public UserFavorite(int id, string username, string destinationName, string destinationAddress, string savedStop){
             this.id = id;
             this.username = username;
             this.destinationName = destinationName;
@@ -16,6 +16,6 @@ namespace Back_End.Models
             this.savedStop = savedStop;
         }
 
-        public UserFavorate() {}
+        public UserFavorite() {}
     }
 }

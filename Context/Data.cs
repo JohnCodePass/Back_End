@@ -7,7 +7,7 @@ namespace Back_End.Context
     public class Data : DbContext
     {
         public DbSet<UserInfo> Users { get; set; }
-        public DbSet<UserFavorate> Favorate { get; set; }
+        public DbSet<UserFavorite> Favorites { get; set; }
         public DbSet<Route> Routes { get; set; }
         public DbSet<Path> Paths { get; set; }
         public DbSet<Stop> Stop { get; set; }
@@ -41,24 +41,23 @@ namespace Back_End.Context
             {
                 new Stop(1, "DTC Depart", "E Weber Ave, Stockton, CA 95202","0","0"),
             };
-            var favorateFixedData = new List<UserFavorate>
+            var favoriteFixedData = new List<UserFavorite>
             {
-                new UserFavorate(1, "huegogh", "DTC Depart","E Weber Ave, Stockton, CA 95202","Pacific & Ben Holt"),
+                new UserFavorite(1, "huegogh", "DTC Depart","E Weber Ave, Stockton, CA 95202","Pacific & Ben Holt"),
             };
             var riderAlertFixedData = new List<RiderAlert>
             {
                 new RiderAlert(1, "1/1/2021", "title","content"),
             };
-
             var fareFixedData = new List<Fare>
             {
                 new Fare(1, "Full-test", "Local-test","1-Ride", "$1.50"),
             };
-
             builder.Entity<UserInfo>().HasData(userFixedData);
             builder.Entity<Route>().HasData(routeFixedData);
             builder.Entity<Path>().HasData(pathFixedData);
             builder.Entity<Fare>().HasData(fareFixedData);
+            builder.Entity<UserFavorite>().HasData(favoriteFixedData);
         }
     }
 }
