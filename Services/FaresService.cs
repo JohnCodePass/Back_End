@@ -15,7 +15,14 @@ namespace Back_End.Services
         }
 
         public IEnumerable<Fare> GetAllFares(){
-            return new List<Fare>();
+            return _dataFromService.Fares;
+        }
+
+        public bool AddFare(Fare fare)
+        {
+            _dataFromService.Add(fare);
+            _dataFromService.SaveChanges();
+            return true;
         }
         
     }

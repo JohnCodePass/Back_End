@@ -32,5 +32,11 @@ namespace Back_End.Controllers
             return _dataFromService.GetAllFares();
         }
 
+        [HttpPost]
+        public bool AddFare([FromBody] Fare fare)
+        {
+            return _dataFromService.AddFare(fare);
+        }
+
     }
 }
