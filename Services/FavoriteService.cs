@@ -16,9 +16,10 @@ namespace Back_End.Services
         }
 
 
-        public IEnumerable<UserFavorite> GetAllFavorites()
+        public IEnumerable<UserFavorite> GetAllFavorites(string username)
         {
-            return _dataFromService.Favorites;
+            return username != null ? _dataFromService.Favorites.Where( p => p.username == username) :
+            _dataFromService.Favorites;
         }
 
         public bool addFavorite(UserFavorite favorite)
@@ -40,5 +41,6 @@ namespace Back_End.Services
             _dataFromService.SaveChanges();
             return true;
         }
+        
     }
 }

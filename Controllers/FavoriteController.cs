@@ -28,9 +28,9 @@ namespace Back_End.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<UserFavorite> GetAllFavorites()
+        public IEnumerable<UserFavorite> GetAllFavorites([FromQuery] string username)
         {
-            return _dataFromService.GetAllFavorites();
+            return _dataFromService.GetAllFavorites(username);
         }
 
         [HttpPost, Route("add")]
