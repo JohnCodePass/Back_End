@@ -12,6 +12,8 @@ namespace Back_End.Context
         public DbSet<Path> Paths { get; set; }
         public DbSet<Stop> Stop { get; set; }
         public DbSet<RiderAlert> RiderAlert { get; set; }
+        public DbSet<Fare> Fares { get; set; }
+
         public Data(DbContextOptions<Data> options) : base(options)
         {
 
@@ -47,9 +49,16 @@ namespace Back_End.Context
             {
                 new RiderAlert(1, "1/1/2021", "title","content"),
             };
+
+            var fareFixedData = new List<Fare>
+            {
+                new Fare(1, "Full-test", "Local-test","1-Ride", "$1.50"),
+            };
+
             builder.Entity<UserInfo>().HasData(userFixedData);
             builder.Entity<Route>().HasData(routeFixedData);
             builder.Entity<Path>().HasData(pathFixedData);
+            builder.Entity<Fare>().HasData(fareFixedData);
         }
     }
 }
