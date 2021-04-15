@@ -85,6 +85,19 @@ namespace Back_End.Controllers
         {
             return _dataFromService.getAllUsers();
         }
+
+        [HttpPut, Route("update")]
+        public bool updateUser(UserInfo user)
+        {
+            return _dataFromService.updateUser(user);
+        }
+
+
+        [HttpDelete, Route("delete")]
+        public bool deleteUser(UserInfo user)
+        {
+            return _dataFromService.deleteUser(user);
+        }
     }
 
         // to authorize a method, add "Authorize"

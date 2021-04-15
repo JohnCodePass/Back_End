@@ -27,5 +27,18 @@ namespace Back_End.Services
         {
             return _dataFromService.Users;
         }
+
+        public bool updateUser(UserInfo user){
+            _dataFromService.Users.Update(user);
+            _dataFromService.SaveChanges();
+            return true;
+        }
+
+        public bool deleteUser(UserInfo user)
+        {
+            _dataFromService.Users.Remove(user);
+            _dataFromService.SaveChanges();
+            return true;
+        }
     }
 }
