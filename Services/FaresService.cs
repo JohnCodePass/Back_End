@@ -13,6 +13,10 @@ namespace Back_End.Services
         {
             _dataFromService = dataFromService;
         }
+
+        public IEnumerable<Fare> GetAllFares(){
+            return new List<Fare>();
+        }
         
     }
 }
