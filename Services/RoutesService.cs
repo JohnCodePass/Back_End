@@ -29,7 +29,7 @@ namespace Back_End.Services
 
         public IEnumerable<Route> GetAllRoutes()
         {
-            return RoutesList;
+            return _dataFromService.Routes;
         }
 
         public bool addRoute(Route route)
@@ -49,7 +49,7 @@ namespace Back_End.Services
         public IEnumerable<Path> getAllPaths(string type)
         {
             return type != null ? _dataFromService.Paths.Where( p => p.typeOfRoute == type) :
-                                _dataFromService.Paths;
+            _dataFromService.Paths;
         }
 
         public bool updatePath(Path path){

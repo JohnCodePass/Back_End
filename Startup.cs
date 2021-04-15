@@ -33,9 +33,9 @@ namespace Back_End
         {
             services.AddControllers();
             services.AddScoped<RoutesService>();
-            services.AddScoped<SheetsService>();
             services.AddScoped<HashPassword>();
             services.AddScoped<FaresService>();
+            services.AddScoped<AuthService>();
 
             var connectionString = Configuration.GetConnectionString("MyConnectionString");
             services.AddDbContext<Data>(options => options.UseSqlServer(connectionString));

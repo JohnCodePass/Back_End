@@ -20,12 +20,16 @@ namespace Back_End.Controllers
     {
 
         public HashPassword hasher;
-        public AuthController(IConfiguration configuration, HashPassword hasher)
+        private readonly AuthService _dataFromService;
+        public IConfiguration Configuration { get; }
+
+        public AuthController(IConfiguration configuration, HashPassword hasher, AuthService dataFromService)
         {
             Configuration = configuration;
+            _dataFromService = dataFromService;
             this.hasher = hasher;
         }
-        public IConfiguration Configuration { get; }
+
 
         [HttpPost, Route("login")]
         public IActionResult Login([FromBody] UserInfo user)
@@ -69,23 +73,19 @@ namespace Back_End.Controllers
         }
 
         [HttpPost, Route("add")]
-        public bool Add([FromBody] UserInfo user)
-        {
 
-            using (SqlConnection con = new SqlConnection(Configuration.GetConnectionString("myConnectionString")))
-            {
-                SqlCommand cmd = new SqlCommand("INSERT INTO UserInfo VALUES (@username, @password)");
-                cmd.Parameters.AddWithValue("@username", user.username );
-                cmd.Parameters.AddWithValue("@password", hasher.Hash(user.password) );
-                cmd.Connection = con;
-                con.Open();
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(ds);
-                con.Close();
-                return true;
-            }
+        public bool AddUser(UserInfo user)
+        {
+            return _dataFromService.addUser(user);
         }
+
+
+        [HttpGet]
+        public IEnumerable<UserInfo> getAllUsers()
+        {
+            return _dataFromService.getAllUsers();
+        }
+    }
 
         // to authorize a method, add "Authorize"
         /* [HttpGet, Route("users"), Authorize]
@@ -181,7 +181,6 @@ namespace Back_End.Controllers
         } */
 
     }
-}
 /* DataSet resembles database.
 DataTable resembles database table,
 and DataRow resembles a record in a table.

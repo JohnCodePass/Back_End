@@ -47,7 +47,7 @@ namespace Back_End.Controllers
         [HttpGet, Route("paths")]
         public IEnumerable<Path> GetAllPaths([FromQuery] string type)
         {
-             return _dataFromService.getAllPaths(type);
+            return _dataFromService.getAllPaths(type);
         }
 
         [HttpPut, Route("update")]
