@@ -3,18 +3,19 @@ namespace Back_End.Models
     public class Stop
     {
         public int id { get;set; }
-        public string stopName { get; set; }
-        public string address { get; set; }
-        public string latitude { get; set; }
-        public string longitude { get; set; }
+        public int stopId { get; set; }
+        public string name { get; set; }
+        public double lat { get; set; }
+        public double lon { get; set; }
 
 
-            public Stop(int id, string stopName, string address, string latitude, string longitude){
+            public Stop(int id, int stopId, string name, double lat, double lon){
             this.id = id;
-            this.stopName = stopName;
-            this.address = address;
-            this.latitude = latitude;
-            this.longitude = longitude;
+            this.stopId = stopId;
+            this.name = name;
+            this.lat = lat;
+            this.lon = lon;
         }
+            public Stop() {}
     }
 }

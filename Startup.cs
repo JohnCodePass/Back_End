@@ -37,6 +37,7 @@ namespace Back_End
             services.AddScoped<FaresService>();
             services.AddScoped<AuthService>();
             services.AddScoped<FavoriteService>();
+            services.AddScoped<StopsService>();
 
             var connectionString = Configuration.GetConnectionString("MyConnectionString");
             services.AddDbContext<Data>(options => options.UseSqlServer(connectionString));
