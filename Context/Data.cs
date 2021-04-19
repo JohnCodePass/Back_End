@@ -39,7 +39,7 @@ namespace Back_End.Context
             };
             var stopFixedData = new List<Stop>
             {
-                new Stop(1, "DTC Depart", "E Weber Ave, Stockton, CA 95202","0","0"),
+                new Stop(1, 0001, "E Weber Ave, Stockton, CA 95202",37.0000000,-121.0000000),
             };
             var favoriteFixedData = new List<UserFavorite>
             {
@@ -58,6 +58,7 @@ namespace Back_End.Context
             builder.Entity<Path>().HasData(pathFixedData);
             builder.Entity<Fare>().HasData(fareFixedData);
             builder.Entity<UserFavorite>().HasData(favoriteFixedData);
+            builder.Entity<Stop>().HasData(stopFixedData);
         }
     }
 }
