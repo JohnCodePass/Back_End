@@ -27,9 +27,9 @@ namespace Back_End.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Fare> GetAllFares()
+        public IEnumerable<Fare> GetAllFares(string type)
         {
-            return _dataFromService.GetAllFares();
+            return _dataFromService.GetAllFares(type);
         }
 
         [HttpPost]
