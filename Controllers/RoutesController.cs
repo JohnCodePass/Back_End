@@ -27,9 +27,9 @@ namespace Back_End.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Route> GetAllRoutes()
+        public IEnumerable<Route> GetAllRoutes([FromQuery] string type)
         {
-            return _dataFromService.GetAllRoutes();
+            return _dataFromService.GetAllRoutes(type);
         }
 
         [HttpPost, Route("add")]

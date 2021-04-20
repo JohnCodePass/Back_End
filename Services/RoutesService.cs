@@ -13,9 +13,14 @@ namespace Back_End.Services
         {
             _dataFromService = dataFromService;
         }
-        public IEnumerable<Route> GetAllRoutes()
+        public IEnumerable<Route> GetAllRoutes(string type)
         {
+            if(type == null){
             return _dataFromService.Routes;
+            }
+            else{
+                return _dataFromService.Routes.Where(r => r.type == type);
+            }
         }
 
         public bool addRoute(Route route)
